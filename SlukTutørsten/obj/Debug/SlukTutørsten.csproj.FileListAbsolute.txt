@@ -17,3 +17,22 @@ C:\Users\jensk\OneDrive - Aarhus universitet\RUS\TutorDruk\SlukTutørsten\obj\De
 C:\Users\jensk\OneDrive - Aarhus universitet\RUS\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.csproj.CoreCompileInputs.cache
 C:\Users\jensk\OneDrive - Aarhus universitet\RUS\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.exe
 C:\Users\jensk\OneDrive - Aarhus universitet\RUS\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.pdb
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\bin\Debug\SlukTutørsten.exe.config
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\bin\Debug\SlukTutørsten.exe
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\bin\Debug\SlukTutørsten.pdb
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.csprojAssemblyReference.cache
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\EditStuff.g.cs
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\EditTutor.g.cs
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\MainWindow.g.cs
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\App.g.cs
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten_MarkupCompile.cache
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten_MarkupCompile.lref
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\EditStuff.baml
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\EditTutor.baml
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\MainWindow.baml
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.g.resources
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.Properties.Resources.resources
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.csproj.GenerateResource.cache
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.csproj.CoreCompileInputs.cache
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.exe
+C:\Users\Anders\Documents\repos\TutorDruk\SlukTutørsten\obj\Debug\SlukTutørsten.pdb
