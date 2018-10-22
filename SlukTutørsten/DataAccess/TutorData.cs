@@ -1,11 +1,12 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using SlukTutørsten.DataAccess.Interfaces;
 using SlukTutørsten.Models;
 
 namespace SlukTutørsten.DataAccess
 {
-    public class TutorData
+    public class TutorData : ITutorData
     {
         private readonly IRusturDataAccess _rusturDataAccess;
 
@@ -13,39 +14,55 @@ namespace SlukTutørsten.DataAccess
         {
             _rusturDataAccess = rusturDataAccess;
         }
-        public Tutor GetSingleTutorByName(string name)
+
+        public async Task<IReadOnlyList<Tutor>> GetAllTutøserAsync()
         {
-
-        }
-    }
-
-    public interface IRusturDataAccess
-    {
-        Task SaveRusturData(Rustur rustur);
-        Task<Rustur> GetRusturData();
-    }
-
-    public class JsonRusturDataAccess : IRusturDataAccess
-    {
-        public async Task SaveRusturData(Rustur rustur)
-        {
-            using (var streamWriter = new StreamWriter("filename", false))
-            {
-                var rusturAsJson = JsonConvert.SerializeObject(rustur);
-                await streamWriter.WriteAsync(rusturAsJson);
-            }
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            return rusturData.Tutøser;
         }
 
-        public async Task<Rustur> GetRusturData()
+        public async Task<Tutor> GetSingleTutorByStreetNameAsync(string streetName)
         {
-            Rustur rustur;
-            using (var reader = new StreamReader("filename"))
-            {
-                var json = await reader.ReadToEndAsync();
-                rustur = JsonConvert.DeserializeObject<Rustur>(json);
-            }
-
-            return rustur;
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            return rusturData.Tutøser.FirstOrDefault(tutor => tutor.StreetNavn == streetName);
         }
+
+        public async Task AddNewTutorAsync(Tutor tutor)
+        {
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            rusturData.Tutøser.Add(tutor);
+            await _rusturDataAccess.SaveRusturDataAsync(rusturData);
+        }
+
+        public async Task AddNewTutorsAsync(IEnumerable<Tutor> tutors)
+        {
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            rusturData.Tutøser.AddRange(tutors);
+            await _rusturDataAccess.SaveRusturDataAsync(rusturData);
+        }
+
+        public async Task<Regning> GetTutorSpendingByStreetNameAsync(string streetName)
+        {
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            var tutor = rusturData.Tutøser.FirstOrDefault(t => t.StreetNavn == streetName);
+            return tutor?.Regning;
+        }
+
+        public async Task UpdateTutorSpendingAsync(string streetName, Produkt produkt)
+        {
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            var tutor = rusturData.Tutøser.FirstOrDefault(t => t.StreetNavn == streetName);
+            tutor?.Regning.Produkter.Add(produkt);
+            await _rusturDataAccess.SaveRusturDataAsync(rusturData);
+        }
+
+        public async Task<IReadOnlyList<Regning>> GetAllTutorSpendingsAsync()
+        {
+            var rusturData = await _rusturDataAccess.GetRusturDataAsync();
+            var spendings = rusturData.Tutøser.Select(tutor => tutor.Regning).ToList();
+            return spendings;
+        }
+
+
     }
 }

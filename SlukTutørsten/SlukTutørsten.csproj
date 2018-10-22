@@ -57,6 +57,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAccess\Interfaces\IRusturDataAccess.cs" />
+    <Compile Include="DataAccess\Interfaces\IProduktData.cs" />
+    <Compile Include="DataAccess\Interfaces\ITutorData.cs" />
+    <Compile Include="DataAccess\JsonRusturDataAccess.cs" />
+    <Compile Include="DataAccess\OrderData.cs" />
+    <Compile Include="DataAccess\ProduktData.cs" />
     <Compile Include="DataAccess\TutorData.cs" />
     <Compile Include="EditStuff.xaml.cs">
       <DependentUpon>EditStuff.xaml</DependentUpon>
@@ -116,5 +122,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
